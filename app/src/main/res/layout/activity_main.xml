@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/almostBlack"
+    android:orientation="vertical"
+    tools:context="com.example.dvmcalculator.MainActivity"
+    tools:ignore="HardcodedText">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="346dp"
+        android:layout_height="397dp"
+        android:layout_weight="2"
+        android:padding="20dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/workingsTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:maxLines="2"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/resultsTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/resultsTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!--        <Button-->
+        <!--            android:id="@+id/history"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="2"-->
+        <!--            android:onClick="historyAction"-->
+        <!--            android:text="🕒"-->
+        <!--            tools:layout_editor_absoluteX="225dp"-->
+        <!--            tools:layout_editor_absoluteY="30dp"-->
+        <!--            tools:ignore="MissingConstraints" />-->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:id="@+id/histBtn"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/turquoise"
+            android:clickable="true"
+            android:elevation="15dp"
+            android:orientation="horizontal"
+            android:src="@drawable/ic_history"
+            android:textAlignment="center"
+            app:rippleColor="@color/almostBlack"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraSmall"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="allClearAction"
+            android:text="AC"
+            android:textColor="@color/red" />
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="backspaceAction"
+            android:text="⌫"
+            android:textColor="@color/red" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text="["
+            android:textColor="@color/red" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text="]"
+            android:textColor="@color/red" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text="(" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text=")" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text="^" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text="/" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="7" />
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="8" />
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="9" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text="x" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="4" />
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="5" />
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="6" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text="-" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="1" />
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="2" />
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="3" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/buttonRow">
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="operationAction"
+            android:text="." />
+
+        <Button
+            style="@style/buttonNumber"
+            android:onClick="numberAction"
+            android:text="0" />
+
+        <Button
+            style="@style/buttonOperator"
+            android:onClick="operationAction"
+            android:text=","
+            android:textColor="@color/red" />
+
+        <Button
+            style="@style/buttonNumber"
+            android:background="@color/turquoise"
+            android:onClick="equalsAction"
+            android:text="=" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
